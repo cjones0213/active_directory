@@ -10,3 +10,28 @@
 ```shell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
+```shell
+Import-Module ADDSDeployment
+```
+```shell
+Install-ADDSForest
+```
+    - Set DomainName
+
+3. Set Domain Controller DNS and Set Workstation DNS
+    - To find Interface Index
+
+```shell
+Get-NetIPAddress
+```
+    - To set ip for DNS
+
+ ```shell
+ Set-DnsClientServerAddress -InterfaceIndex X -ServerAddresses 192.168.xxx.xxx
+ ```
+
+ 4. Add workstation to Domain
+
+ ```
+ Add-Computer -DomainName xyz.com -Credential xyz\Administrator -Force -Restart
+ ```
