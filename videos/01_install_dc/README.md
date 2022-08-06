@@ -16,21 +16,22 @@ Import-Module ADDSDeployment
 ```shell
 Install-ADDSForest
 ```
-    - Set DomainName
+- Set DomainName
 
 3. Set Domain Controller DNS and Set Workstation DNS
-    - To find Interface Index
 
 ```shell
 Get-NetIPAddress
 ```
-    - To set ip for DNS
+
+- To find Interface Index X
 
  ```shell
  Set-DnsClientServerAddress -InterfaceIndex X -ServerAddresses 192.168.xxx.xxx
  ```
+- To set ip for DNS
 
- 4. Add workstation to Domain
+ 4. Add workstation VM to Domain
 
  ```
  Add-Computer -DomainName xyz.com -Credential xyz\Administrator -Force -Restart
